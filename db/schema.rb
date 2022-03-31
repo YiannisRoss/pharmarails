@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_331_075_633) do
-  create_table 'items', force: :cascade do |t|
-    t.string 'serial_number'
-    t.string 'unit'
-    t.string 'lot_number'
-    t.date 'expiration_date'
-    t.string 'product_code'
-    t.string 'product_title'
-    t.string 'status'
-    t.datetime 'status_update_timestamp'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+ActiveRecord::Schema.define(version: 2022_03_31_075633) do
+
+  create_table "items", force: :cascade do |t|
+    t.string "serial_number"
+    t.string "unit"
+    t.string "lot_number"
+    t.date "expiration_date"
+    t.string "product_code"
+    t.string "product_title"
+    t.string "status"
+    t.text "status_update_history"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
+
 end

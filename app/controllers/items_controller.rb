@@ -11,18 +11,20 @@ class ItemsController < ApplicationController
     @item = Item.all.find(params[:id])
   end
 
-  def update 
+  def update
     @item = Item.all.find(params[:id])
 
+    @item.status_update_history.push(Time.now.strftime('%d/%m/%Y %H:%M'))
+
     respond_to do |format|
-        if @item.update(item_params)
-          format.html { redirect_to @item, notice: "item was successfully updated." }
-          format.json { render :show, status: :ok, location: @item }
-        else
-          format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @item.errors, status: :unprocessable_entity }
-        end
+      if @item.update(item_params)
+        format.html { redirect_to @item, notice: 'item was successfully updated.' }
+        format.json { render :show, status: :ok, location: @item }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
       end
+    end
   end
 
   def show
@@ -48,6 +50,6 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:serial_number, :unit, :lot_number, :expiration_date, :product_code,
-                                 :product_title, :status)
+                                 :product_title, :status, :status_update_history)
   end
 end

@@ -7,30 +7,30 @@
     <li>Expiration date: <%= @item.expiration_date %></li>
     <li>Product code: <%= @item.product_code %> </li>
     <li>Status: <%= @item.status %> </li>
-    <li>Status update timestamp: </li>
+    <% unless @item.status_update_history.empty? %>
+    <li>Status history: <%= @item.status_update_history[0] %></li> 
+    <% end %>
     
 
 </ul>
 
 
-<% unless @item.status == 'Destroyed' %>
+<% if @item.status == 'Commissioned' %>
 <%= form_with model: @item do |f| %>
 
   
     <div class="field">
         <h3>Change item status</h3>
     
-    <% if @item.status == 'Sampled' %>
 
-    <%= f.radio_button :status, 'Commissioned' %> 
-    <%= f.label :status, 'Commissioned', :value => 'Commissioned' %>
+    <%= f.radio_button :status, 'Sampled' %> 
+    <%= f.label :status, 'Sampled', value: 'Sampled' %>
 
-    <% elsif @item.status == 'Commissioned' %>
+    <%= f.radio_button :status, 'Destroyed' %> 
+    <%= f.label :status, 'Destroyed', value: 'Destroyed' %>
 
-        <%= f.radio_button :status, 'Destroyed' %> 
-    <%= f.label :status, 'Destroyed', :value => 'Destroyed' %>
 
-    <% end %>
+    <%# <%= f.hidden_field :status_update_history, value: Time.now.strftime("%d/%m/%Y %H:%M") %> 
   </div>
 
   
