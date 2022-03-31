@@ -8,11 +8,21 @@
 <% end %>
 
 
-<% unless @items.nil? %>
-<ul>
-<% @items.each do |item| %>
-        <li> <%= item.product_title %> <%= link_to 'View details', item_path(item) %> </li>
-        <% end%>
-<% else %>
+<% if @items.nil? %>
     <p>No items searched yet </p>
+
+<% elsif @items.empty? %>
+
+    <p>No item matches that serial number. <%= link_to 'Create new item?', new_item_path %> </p>
+        
+<% else%>
+    <ul>
+        <% @items.each do |item| %>
+            <li> <%= item.product_title %> <%= link_to 'View details', item_path(item) %> </li>
+        <% end%>
+    </ul>
 <% end%>
+
+        
+    
+
