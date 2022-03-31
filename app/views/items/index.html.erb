@@ -1,1 +1,12 @@
 <h1>Items index</h1>
+
+
+<ul>
+<% if @items.any?%>
+    <% @items.each do |item| %>
+        <li> <%= item.product_title %> </li>
+    <% end %>
+<% else %>
+    <p>No items entered yet </p>
+<% end%>
+</ul>
