@@ -8,11 +8,29 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.all.find_by(params[:id])
+    @item = Item.all.find(params[:id])
+  end
+
+  def update 
+    @item = Item.all.find(params[:id])
+
+    respond_to do |format|
+        if @item.save
+          format.html { redirect_to item_path(@item), notice: 'item was successfully updated.' }
+          format.json { render :show, status: :created, location: @item }
+        else
+          format.html do
+            redirect_to items_path, alert: "item creation failed, #{@item.errors.full_messages.first}",
+                                    status: :unprocessable_entity
+          end
+          format.json { render json: @item.errors, status: :unprocessable_entity }
+        end
+      end
+
   end
 
   def show
-    @item = Item.all.find_by(params[:id])
+    @item = Item.all.find(params[:id])
   end
 
   def create
