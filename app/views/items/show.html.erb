@@ -7,8 +7,8 @@
     <li>Expiration date: <%= @item.expiration_date %></li>
     <li>Product code: <%= @item.product_code %> </li>
     <li>Status: <%= @item.status %> </li>
-    <% unless @item.status_update_history.empty? %>
-    <li>Status history: <%= @item.status_update_history[0] %></li> 
+    <% unless @item.status_updated_at.nil? %>
+    <li><%= @item.status %> at: <%= @item.status_updated_at %></li> 
     <% end %>
     
 
@@ -30,7 +30,7 @@
     <%= f.label :status, 'Destroyed', value: 'Destroyed' %>
 
 
-    <%# <%= f.hidden_field :status_update_history, value: Time.now.strftime("%d/%m/%Y %H:%M") %> 
+     <%= f.hidden_field :status_updated_at, value: Time.now.strftime("%d/%m/%Y %H:%M") %> 
   </div>
 
   

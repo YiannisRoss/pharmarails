@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.string :product_code
       t.string :product_title
       t.string :status
-      t.text :status_update_history
+      t.timestamp :status_updated_at
 
       t.timestamps
     end

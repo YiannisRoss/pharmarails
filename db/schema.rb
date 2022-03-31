@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_03_31_075633) do
     t.string "product_code"
     t.string "product_title"
     t.string "status"
-    t.text "status_update_history"
+    t.datetime "status_updated_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

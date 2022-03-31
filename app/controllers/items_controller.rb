@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
   def update
     @item = Item.all.find(params[:id])
 
-    @item.status_update_history.push(Time.now.strftime('%d/%m/%Y %H:%M'))
 
     respond_to do |format|
       if @item.update(item_params)
@@ -50,6 +49,6 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:serial_number, :unit, :lot_number, :expiration_date, :product_code,
-                                 :product_title, :status, :status_update_history)
+                                 :product_title, :status, :status_updated_at)
   end
 end
