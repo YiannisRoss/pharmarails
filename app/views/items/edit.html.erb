@@ -3,33 +3,10 @@
 
 <%= form_with model: @item do |f| %>
 
-  <div class="field">
-    <%= f.label :serial_number %><br />
-    <%= f.text_field :serial_number, autofocus: true, value: @item.serial_number ,required: true%>
-  </div>
-
-  <div class="field">
-    <%= f.label :lot_number %><br>
-    <%= f.text_field :lot_number, value: @item.lot_number, required: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :expiration_date %><br>
-    <%= f.date_field :expiration_date, value: @item.expiration_date, required: true %>
-  </div>
-
-    <div class="field">
-    <%= f.label :product_code %><br>
-    <%= f.text_field :product_code, value: @item.product_code, required: true %>
-  </div>
-
-    <div class="field">
-    <%= f.label :product_title %><br>
-    <%= f.text_field :product_title, value: @item.product_title, required: true %>
-  </div>
-
+  
     <div class="field">
         <h3>Status</h3>
+    
     <%= f.radio_button :status, 'Sampled' %>
     <%= f.label :status, 'Sampled', :value => 'Sampled' %>
 
@@ -40,20 +17,7 @@
     <%= f.label :status, 'Destroyed', :value => 'Destroyed' %>
   </div>
 
-  <div class="field">
-          <h3>Unit</h3>
-    <%= f.radio_button :unit, 'Each', required: true, value: @item.unit %>
-    <%= f.label :unit, 'Each', :value => 'Each'  %>
-
-    <%= f.radio_button :unit, 'Bundle' %> 
-    <%= f.label :unit, 'Bundle', :value => 'Bundle' %>
-
-    <%= f.radio_button :unit, 'Case' %>
-    <%= f.label :unit, 'Case', :value => 'Case' %>
-
-    <%= f.radio_button :unit, 'Pallet' %>
-    <%= f.label :unit, 'Pallet', :value => 'Pallet' %>
-  </div>
+  
 
   <div class="actions">
     <%= f.submit "Submit" %>

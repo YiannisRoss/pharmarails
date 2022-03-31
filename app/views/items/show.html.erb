@@ -12,4 +12,33 @@
 
 </ul>
 
-<%= link_to 'Edit item', edit_item_path(@item) %>
+
+<% unless @item.status == 'Destroyed' %>
+<%= form_with model: @item do |f| %>
+
+  
+    <div class="field">
+        <h3>Change item status</h3>
+    
+    <% if @item.status == 'Sampled' %>
+
+    <%= f.radio_button :status, 'Commissioned' %> 
+    <%= f.label :status, 'Commissioned', :value => 'Commissioned' %>
+
+    <% elsif @item.status == 'Commissioned' %>
+
+        <%= f.radio_button :status, 'Destroyed' %> 
+    <%= f.label :status, 'Destroyed', :value => 'Destroyed' %>
+
+    <% end %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+
+  <% end %>
+
+  <% end %>
