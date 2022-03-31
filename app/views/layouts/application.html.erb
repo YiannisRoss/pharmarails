@@ -13,7 +13,11 @@
   <body>
     <nav> 
       <div id='navbar-contents-container'> 
-      
+        <h1>Pharmarails</h1>
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+        <%= link_to 'Home', items_path%>
+        <%= link_to 'New Item', new_item_path%>
       </div>
     </nav>
     <%= yield %>

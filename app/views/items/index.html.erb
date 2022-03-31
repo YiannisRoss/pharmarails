@@ -4,7 +4,7 @@
 <ul>
 <% if @items.any?%>
     <% @items.each do |item| %>
-        <li> <%= item.product_title %> </li>
+        <li> <%= item.product_title %> <%= link_to 'Edit item', edit_item_path(item) %> </li>
     <% end %>
 <% else %>
     <p>No items entered yet </p>
