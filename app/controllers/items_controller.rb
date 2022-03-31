@@ -15,18 +15,14 @@ class ItemsController < ApplicationController
     @item = Item.all.find(params[:id])
 
     respond_to do |format|
-        if @item.save
-          format.html { redirect_to item_path(@item), notice: 'item was successfully updated.' }
-          format.json { render :show, status: :created, location: @item }
+        if @item.update(item_params)
+          format.html { redirect_to @item, notice: "item was successfully updated." }
+          format.json { render :show, status: :ok, location: @item }
         else
-          format.html do
-            redirect_to items_path, alert: "item creation failed, #{@item.errors.full_messages.first}",
-                                    status: :unprocessable_entity
-          end
+          format.html { render :edit, status: :unprocessable_entity }
           format.json { render json: @item.errors, status: :unprocessable_entity }
         end
       end
-
   end
 
   def show
