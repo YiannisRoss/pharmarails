@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
   def update
     @item = Item.all.find(params[:id])
 
-
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'item was successfully updated.' }
