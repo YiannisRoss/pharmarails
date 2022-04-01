@@ -77,6 +77,9 @@ It is recommended to install Yarn through the npm package manager, which comes b
 If you DON'T have npm installed, you should be able to install it by running:
 
 `sudo apt install npm`
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
 
 Once you have npm installed you can run the following both to install and upgrade Yarn:
 
@@ -103,6 +106,7 @@ Install Ruby gems by running:
 
 `bundle`
 
+`rails webpacker:install`
 
 `rails db:migrate`
 
