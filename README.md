@@ -5,7 +5,7 @@ First, make sure your Linux distribution is up to date.
 sudo apt update
 sudo apt upgrade
 ```
-Next, you need to install some required packages that do not come preinstalled. Be sure to copy and paste this command.
+Next, you need to install some required packages that do not come preinstalled:
 
 `sudo apt install gcc make libssl-dev libreadline-dev zlib1g-dev libsqlite3-dev`
 ## rbenv
@@ -14,7 +14,7 @@ First,  clone the rbenv repository.
 
 `git clone https://github.com/rbenv/rbenv.git ~/.rbenv`
 
-Next, we’ll add some commands to allow rbenv to work properly. 
+Next, add some commands to allow rbenv to work properly:
 ```
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
@@ -39,7 +39,7 @@ Inside the terminal, run this command:
 
 `rbenv install 3.0.2 --verbose`
 
-This command will take 10-15 minutes to complete. The --verbose flag will show you what’s going on so you can be sure it hasn’t gotten stuck.
+This command will take some time. The --verbose flag will show you what’s going on so you can be sure it hasn’t gotten stuck.
 
 When the last command is finished, set the Ruby version and verify that it’s working:
 
@@ -76,10 +76,12 @@ It is recommended to install Yarn through the npm package manager, which comes b
 
 If you DON'T have npm installed, you should be able to install it by running:
 
-`sudo apt install npm`
+```
+sudo apt install npm
 sudo npm cache clean -f
 sudo npm install -g n
 sudo n stable
+```
 
 Once you have npm installed you can run the following both to install and upgrade Yarn:
 
