@@ -1,4 +1,17 @@
-# Installing Ruby
+# Table of Contents  
+
+
+- [Installing Ruby](#ruby)  
+  * [rbenv](#rbenv)
+- [Installing Rails](#rails)  
+  * [Node](#node)
+- [Installing the project](#project)  
+- [Running the project](#running)
+
+
+<a name="ruby"/>
+
+## Installing Ruby
 
 First, make sure your Linux distribution is up to date. 
 ```
@@ -8,7 +21,11 @@ sudo apt upgrade
 Next, you need to install some required packages that do not come preinstalled:
 
 `sudo apt install gcc make libssl-dev libreadline-dev zlib1g-dev libsqlite3-dev`
-## rbenv
+
+<a name="rbenv"/>    
+
+### rbenv
+
 Install rbenv, which makes it easy to install and manage Ruby versions.
 First,  clone the rbenv repository.
 
@@ -53,8 +70,10 @@ The above command should return something similar to this:
 
 `ruby 3.0.2pxx (20xx-xx-xx revision xxxxx) [x86_64-linux]`
 
+<a name="rails"/>
 
 # Installing Rails
+
 Run:
 
 `gem install rails`
@@ -70,6 +89,10 @@ This should display the version of Rails installed on your system indicating the
 You can verify if you have Yarn installed already by running the following command:
 
 `yarn --version`
+
+<a name="node"/>
+
+### Node
 
 It is recommended to install Yarn through the npm package manager, which comes bundled with Node.js. To install Node:
 `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
@@ -97,8 +120,9 @@ Alternatively, you can find the Yarn installer for each individual operating sys
 
 https://classic.yarnpkg.com/lang/en/docs/install
 
+<a name="project"/>
 
-# Running the project
+# Installing the project
 
 cd into the project:
 
@@ -123,12 +147,15 @@ Start the server:
 
 `rails s`
 
-# Navigating the project
+<a name="running"/>   
+
+# Running the project 
 
 The project should be accessible on http://localhost:3000/ or http://127.0.0.1:3000/ . If not, the terminal should show the appropriate URL.
 
-  The main page allows for creating new Items, as well as searching. Any created item can be searched by serial number. Pre-made serial numbers are:
-    ```
+  The main page allows for creating new Items, as well as searching. Any created item can be searched by serial number. Pre-made products' serial numbers are:
+  
+```
     123456789 
     987654321
     111111111
