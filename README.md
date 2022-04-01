@@ -80,7 +80,7 @@ If you DON'T have npm installed, you should be able to install it by running:
 
 Once you have npm installed you can run the following both to install and upgrade Yarn:
 
-`npm install --global yarn`
+`sudo npm install --global yarn`
 
 (If you run into a 'EACCES Permission denied' error on the node_modules folder, set node_modules to be owned by you:
 
