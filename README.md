@@ -108,10 +108,30 @@ Install Ruby gems by running:
 
 `bundle`
 
+Update webpacker:
+
 `rails webpacker:install`
 
-`rails db:migrate`
+Configure database:
 
-`rails db:seed`
+```
+rails db:migrate
+rails db:seed
+```
+
+Start the server:
 
 `rails s`
+
+# Navigating the project
+
+The project should be accessible on http://localhost:3000/ or http://127.0.0.1:3000/ . If not, the terminal should show the appropriate URL.
+
+  The main page allows for creating new Items, as well as searching. Any created item can be searched by serial number. Pre-made serial numbers are:
+    ```
+    123456789 
+    987654321
+    111111111
+    000000000 
+    222222222
+```
