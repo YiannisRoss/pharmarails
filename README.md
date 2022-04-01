@@ -52,3 +52,60 @@ Then,
 The above command should return something similar to this:
 
 `ruby 3.0.2pxx (20xx-xx-xx revision xxxxx) [x86_64-linux]`
+
+
+# Installing Rails
+Run:
+
+`gem install rails`
+
+Once the installation finishes, you can check if everything went well by restarting your terminal and running the following command:
+
+`rails -v`
+
+This should display the version of Rails installed on your system indicating the installation went smoothly.
+
+## Install Yarn
+
+You can verify if you have Yarn installed already by running the following command:
+
+`yarn --version`
+
+It is recommended to install Yarn through the npm package manager, which comes bundled with Node.js. To install Node:
+`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
+
+If you DON'T have npm installed, you should be able to install it by running:
+
+`sudo apt install npm`
+
+Once you have npm installed you can run the following both to install and upgrade Yarn:
+
+`npm install --global yarn`
+
+(If you run into a 'EACCES Permission denied' error on the node_modules folder, set node_modules to be owned by you:
+
+(ownerName is your account's name, visible by running `whoami` in Linux)
+
+`sudo chown -r ownerName: /usr/local/lib/node_modules'`
+
+Alternatively, you can find the Yarn installer for each individual operating system here:
+
+https://classic.yarnpkg.com/lang/en/docs/install
+
+
+# Running the project
+
+cd into the project:
+
+`cd pharmarails`
+
+Install Ruby gems by running:
+
+`bundle`
+
+
+`rails db:migrate`
+
+`rails db:seed`
+
+`rails s`
