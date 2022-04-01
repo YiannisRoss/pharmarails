@@ -34,6 +34,13 @@ Item.create([
                 expiration_date: rand(3.years).seconds.from_now,
                 product_code: '492135',
                 product_title: 'Nyquil',
-                status: 'Sampled' }
+                status: 'Sampled' },
+              { serial_number: '222222222',
+                unit: 'Each',
+                lot_number: '64522',
+                expiration_date: rand(5.months).seconds.from_now,
+                product_code: '97351',
+                product_title: 'Ibuprofen',
+                status: 'Commissioned' }
 
             ])
