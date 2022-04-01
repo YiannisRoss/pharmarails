@@ -86,7 +86,7 @@ Once you have npm installed you can run the following both to install and upgrad
 
 (ownerName is your account's name, visible by running `whoami` in Linux)
 
-`sudo chown -r ownerName: /usr/local/lib/node_modules'`
+`sudo chown -R ownerName: /usr/local/lib/node_modules'`
 
 Alternatively, you can find the Yarn installer for each individual operating system here:
 
