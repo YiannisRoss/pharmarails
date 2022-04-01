@@ -30,22 +30,25 @@ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-b
 Finally, run
 
 `rbenv -v`
+
 from your terminal to verify that rbenv has been installed correctly. You should get an output with a version number similar to this:
 
 `rbenv 1.2.0-8-ga76c4aa`
 
-
 Inside the terminal, run this command:
 
 `rbenv install 3.0.2 --verbose`
+
 This command will take 10-15 minutes to complete. The --verbose flag will show you what’s going on so you can be sure it hasn’t gotten stuck.
 
 When the last command is finished, set the Ruby version and verify that it’s working:
 
 `rbenv global 3.0.2`
+
 Then,
 
-ruby -v
+`ruby -v`
+
 The above command should return something similar to this:
 
 `ruby 3.0.2pxx (20xx-xx-xx revision xxxxx) [x86_64-linux]`
