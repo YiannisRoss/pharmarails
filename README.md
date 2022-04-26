@@ -1,3 +1,6 @@
+A Rails CRUD app for pharmaceutical products
+
+
 # Table of Contents  
 
 
